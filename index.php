@@ -35,7 +35,6 @@
         <button class="accordion">TEMA 3</button>
         <div class="panel">
         <a href="tema 3/ejercicio1.php">EJERCICIO 1</a>
-        
         <form method="post" action="tema 3/ejercicio1.php">
         <input type="text" name="peso">
         <input type="text" name="altura">
@@ -44,15 +43,16 @@
         <p>Calculo del IMC</p>
         <a href="tema 3/ejercicio2.php">EJERCICIO 2</a>
         <p>Dados</p>
-
         <a href="tema 3/ejercicio3.php">EJERCICIO 3</a>
-        <p>Conexión a base de datos MySQL</p>
-
+        <p>Conezión a BBDD de MySQL y tipos de dato de tiempo</p>
         <a href="tema 3/ejercicio4.php">EJERCICIO 4</a>
-        <p>Practicando con la funcion sort de array</p>
-
+        <p>Ejercicio de Sort (arrays)</p>
         <a href="tema 3/ejercicio5.php">EJERCICIO 5</a>
-        <p>Practicando con la funcion sort de array</p>
+        <p>Contar número de repeticiones de números aleatorios en un array</p>
+        <a href="tema 3/ejercicio6.php">EJERCICIO 6</a>
+        <p>Diferencia de las diagonales de una matriz 10x10 aleatoria</p>
+        <a href="tema 3/ejercicio7.php">EJERCICIO 7</a>
+        <p>Añadir a un array de datos en la BBDD</p>
         </div>
 
         <button class="accordion">TEMA 4</button>

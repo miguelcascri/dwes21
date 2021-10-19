@@ -31,20 +31,31 @@ foreach($datos as $clave => $valor){
     $fecha_date = $valor["fecha_date"];
     $fecha_datetime = $valor["fecha_datetime"];
     $fecha_time = $valor["fecha_time"];
-    $fecha_timestap = $valor["fecha_timestamp"];
+    $fecha_timestamp = $valor["fecha_timestamp"];
 
-    echo "$fecha_int"." =========> ".date("Y-m-d // H:i:s", $fecha_int)."<br>";
-    echo "$fecha_date"." =========> ".date("Y-m-d // H:i:s", strtotime($fecha_date))."<br>";
-    echo "$fecha_datetime"." ==> ".date("Y-m-d // H:i:s", strtotime($fecha_datetime))."<br>";
-    echo "$fecha_time"." ===========> ".date("Y-m-d // H:i:s", strtotime($fecha_time))."<br>";
-    echo "$fecha_timestap"." ==> ".date("Y-m-d // H:i:s", strtotime($fecha_timestap))."<br><br>";
+    echo "$fecha_int"." ==========> ".date("Y-m-d // H:m:s", strtotime($fecha_int))."<br>";
+    echo "$fecha_date"." =========> ".date("Y-m-d // H:m:s", strtotime($fecha_date))."<br>";
+    echo "$fecha_datetime"." ==> ".date("Y-m-d // H:m:s", strtotime($fecha_datetime))."<br>";
+    echo "$fecha_time"." ===========> ".date("Y-m-d // H:m:s", strtotime($fecha_time))."<br>";
+    echo print_r($fecha_timestamp)." ==> ".date("Y-m-d // H:m:s", strtotime($fecha_timestamp))."<br><br>";
 
+    $fecha_intS = strtotime($fecha_int);
+    $fecha_dateS = strtotime($fecha_date);
+    $fecha_datetimeS = strtotime($fecha_datetime);
+    $fecha_timeS = strtotime($fecha_time);
+    $fecha_timestampS = strtotime($fecha_timestamp);
 
-    echo "$fecha_int"." =========> ".date("Y-m-d // H:i:s", strtotime('15 days', $fecha_int))."<br>";
-    echo "$fecha_date"." =========> ".date("Y-m-d // H:i:s", strtotime('15 days', $fecha_date))."<br>";
-    echo "$fecha_datetime"." ==> ".date("Y-m-d // H:i:s", strtotime('15 days', $fecha_datetime))."<br>";
-    echo "$fecha_time"." ===========> ".date("Y-m-d // H:i:s", strtotime('15 days', $fecha_time))."<br>";
-    echo "$fecha_timestap"." ==> ".date("Y-m-d // H:i:s", strtotime('15 days', $fecha_timestap))."<br><br>";
+    // echo $fecha_intS."<br>";
+    // echo $fecha_dateS."<br>";
+    // echo $fecha_datetimeS."<br>";
+    // echo $fecha_timeS."<br>";
+    // echo $fecha_timestampS."<br>";
+
+    echo "$fecha_int"." ==========> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_intS))."<br>";
+    echo "$fecha_date"." =========> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_dateS))."<br>";
+    echo "$fecha_datetime"." ==> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_datetimeS))."<br>";
+    echo "$fecha_time"." ===========> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_timeS))."<br>";
+    echo "$fecha_timestamp"." ==> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_timestampS))."<br><br>";
 
 
 }
