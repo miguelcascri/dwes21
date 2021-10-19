@@ -57,6 +57,12 @@
 
         <button class="accordion">TEMA 4</button>
         <div class="panel">
+        <a href="tema 4/ejercicio1.php">EJERCICIO 1</a>
+        <form method="post" action="tema 4/ejercicio1.php">
+        <input type="number" name="number">
+        <input type="submit">
+        </form>
+        <p>Ejercicio de primos</p>
         </div>
         
         <button class="accordion">TEMA 5</button>
