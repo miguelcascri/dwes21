@@ -68,7 +68,14 @@
         <input type="date" name="date">
         <input type="submit">
         </form>
-        <p>Ejercicio de primos</p>
+        <p>Ejercicio del año bisiesto</p>
+        <a href="tema 4/ejercicio3.php">EJERCICIO 3</a>
+        <form method="post" action="tema 4/ejercicio3.php">
+        <label>Introduzca el número de elementos de la serie de fibonacci que desea obtener</label>
+        <input type="number" name="fibonacci">
+        <input type="submit">
+        </form>
+        <p>Ejercicio de la serie de fibonacci</p>
         </div>
         
         <button class="accordion">TEMA 5</button>
