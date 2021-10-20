@@ -63,6 +63,12 @@
         <input type="submit">
         </form>
         <p>Ejercicio de primos</p>
+        <a href="tema 4/ejercicio2.php">EJERCICIO 2</a>
+        <form method="post" action="tema 4/ejercicio2.php">
+        <input type="date" name="date">
+        <input type="submit">
+        </form>
+        <p>Ejercicio de primos</p>
         </div>
         
         <button class="accordion">TEMA 5</button>
