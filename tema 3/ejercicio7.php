@@ -25,22 +25,31 @@ mysqli_select_db($conn,"medac");
 //ejecutamos consulta a bd
 $datos= mysqli_query($conn,$consulta);
 
-$arrayTiempo = []
+//creamos un array
+$fechas = [];
 //recorremos
-// foreach($datos as $clave => $valor){
-//     $fecha_int = $valor["fecha_int"];
-//     $fecha_date = $valor["fecha_date"];
-//     $fecha_datetime = $valor["fecha_datetime"];
-//     $fecha_time = $valor["fecha_time"];
-//     $fecha_timestamp = $valor["fecha_timestamp"];
+foreach($datos as $clave => $valor){
+    $fecha_int = $valor["fecha_int"];
+    $fecha_date = $valor["fecha_date"];
+    $fecha_datetime = $valor["fecha_datetime"];
+    $fecha_time = $valor["fecha_time"];
+    $fecha_timestamp = $valor["fecha_timestamp"];
     
-// }
+    $fecha_dateS = strtotime($fecha_date);
+    $fecha_datetimeS = strtotime($fecha_datetime);
+    $fecha_timeS = strtotime($fecha_time);
+    $fecha_timestampS = strtotime($fecha_timestamp);
 
+    array_push($fechas, $fecha_int);
+    array_push($fechas, $fecha_dateS);
+    array_push($fechas, $fecha_datetimeS);
+    array_push($fechas, $fecha_timeS);
+    array_push($fechas, $fecha_timestampS);
 
-// array_push($arrayTiempo, $fecha_int = $valor["fecha_int"]);
-// array_push($arrayTiempo, $fecha_date = $valor["fecha_date"]);
-// array_push($arrayTiempo, $fecha_datetime = $valor["fecha_datetime"]);
-// array_push($arrayTiempo, $fecha_time = $valor["fecha_time"]);
-// array_push($arrayTiempo, $fecha_timestamp = $valor["fecha_timestamp"]);
+    rsort($fechas);
+    foreach($fechas as $fecha){
+        echo $fecha." ==>".date("Y-m-d // H:m:s", $fecha)."<br>";
+    }
 
+}
 ?>

@@ -57,7 +57,6 @@ foreach($datos as $clave => $valor){
     echo "$fecha_time"." ===========> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_timeS))."<br>";
     echo "$fecha_timestamp"." ==> ".date("Y-m-d // H:m:s", strtotime('-15 days', $fecha_timestampS))."<br><br>";
 
-
 }
 
 ?>
