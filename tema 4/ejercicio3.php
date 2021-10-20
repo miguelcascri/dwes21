@@ -9,7 +9,7 @@ function fibonacci ($number){
     }
 
     for($i = 2; $i <= $number; $i++){
-        array_push($serie_fibonacci,($i-1)+($i-2));
+        array_push($serie_fibonacci,$serie_fibonacci[$i-1]+$serie_fibonacci[$i-2]);
     }
 
     echo "La serie de fibonacci que se desea mostrar es la siguiente: <br>";
