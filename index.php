@@ -76,8 +76,15 @@
         <input type="submit">
         </form>
         <p>Ejercicio de la serie de fibonacci</p>
+        <a href="tema 4/ejercicio4.php">EJERCICIO 4</a>
+        <form method="post" action="tema 4/ejercicio4.php">
+        <input type="text" name="user">
+        <input type="password" name="pw">
+        <input type="submit">
+        </form>
+        <p>Ejercicio de usuario existente</p>
         </div>
-        
+
         <button class="accordion">TEMA 5</button>
         <div class="panel">
         </div>

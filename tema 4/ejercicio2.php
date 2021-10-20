@@ -3,7 +3,9 @@
 $fecha = $_POST['date'];
 
 function esBisiesto ($fecha){
-    if((date("Y", strtotime($fecha)) % 4)==0){
+    if((date("Y", strtotime($fecha)) % 4)==0 && (date("Y", strtotime($fecha)) % 100)!=0){
+        return true;
+    }else if((date("Y", strtotime($fecha)) % 400)==0){
         return true;
     }else{
         return false;
