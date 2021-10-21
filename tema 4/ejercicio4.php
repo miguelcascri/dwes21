@@ -22,7 +22,7 @@ if(!$conn) {
 echo "Conectado correctamente <br>";
 
 //preparamos sentencia
-$consulta="SELECT usuario, contraseña FROM usuarios";
+$consulta="SELECT email, password FROM usuarios";
 
 //seleccionamos base de datos
 mysqli_select_db($conn,"medac");
@@ -31,8 +31,8 @@ mysqli_select_db($conn,"medac");
 $datos= mysqli_query($conn,$consulta);
 
     foreach($datos as $clave => $value){
-        $usuario = $value["usuario"];
-        $password = $value["contraseña"];
+        $usuario = $value["email"];
+        $password = $value["password"];
 
         if (($email === $usuario) && ($contraseña === $password)){
             return true;
