@@ -78,8 +78,8 @@
         <p>Ejercicio de la serie de fibonacci</p>
         <a href="tema 4/ejercicio4.php">EJERCICIO 4</a>
         <form method="post" action="tema 4/ejercicio4.php">
-        <input type="text" name="user">
-        <input type="password" name="pw">
+        <p>Email      <input type="email" name="usuario"></p>
+        <p>Contraseña  <input type="password" name="pw"></p>
         <input type="submit">
         </form>
         <p>Ejercicio de usuario existente</p>

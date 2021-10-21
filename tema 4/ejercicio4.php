@@ -1,9 +1,9 @@
 <?php
 
-$name = $_POST['user'];
+$email = $_POST['usuario'];
 $contraseña = $_POST['pw'];
 
-function existeUsuario ($name, $contraseña){
+function existeUsuario ($email, $contraseña){
  
 /* CONEXION A BASE DE DATOS */
 //datos para acceso a la bbdd
@@ -34,7 +34,7 @@ $datos= mysqli_query($conn,$consulta);
         $usuario = $value["usuario"];
         $password = $value["contraseña"];
 
-        if (($name === $usuario) && ($contraseña === $password)){
+        if (($email === $usuario) && ($contraseña === $password)){
             return true;
         }else{
             return false;
@@ -42,7 +42,7 @@ $datos= mysqli_query($conn,$consulta);
     }
 }
 
-if(existeUsuario($name, $contraseña)){
+if(existeUsuario($email, $contraseña)){
     echo "Los datos introducidos sí existen en la base de datos";
 }else{
     echo "Los datos introducidos no existen en la base de datos";
