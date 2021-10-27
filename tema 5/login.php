@@ -43,11 +43,27 @@ $datos= mysqli_query($conn,$consulta);
 
 if(existeUsuario($email, $contraseña)){
     session_start(); // se crea sesion
+    ini_set("session.cookie_lifetime","10");
+    ini_set("session.gc_maxlifetime","10");
     $_SESSION["id"]="$email";
     header("Location: "."dashboard.php");
 }else{
-    echo "<div class=\"alert alert-success\" role=\"alert\">¡Los datos introducidos son incorrectos!</div>";
     header("Location: "."index.php");
+    echo '<script language="javascript">alert("juas");</script>';
+    flush();
+    
 }
-
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login.php</title>
+</head>
+<body>
+
+</body>
+</html>
