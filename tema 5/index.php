@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +8,7 @@
 
 </head>
 <body>
-    <p>EJERCICIO LOG IN</p>
+    <p>LOG IN</p>
         <form method="post" action="login.php">
         <p>Email</p>      <input type="email" name="usuario">
         <p>Contraseña</p>  <input type="password" name="pw"><br><br>
@@ -17,3 +16,22 @@
         </form>
 </body>
 </html>
+
+<?php
+
+if(isset($_GET["message"])){
+
+    if($_GET["message"]=="1"){
+        echo '<script language="javascript">alert("Error, autenticación incorrecta.");</script>';
+    }
+
+    if($_GET["message"]=="2"){
+        echo '<script language="javascript">alert("Sesión cerrada con éxito.");</script>';
+    }
+
+    if($_GET["message"]=="3"){  
+        echo '<script language="javascript">alert("No se ha iniciado sesión.");</script>';
+    }
+}
+
+?>

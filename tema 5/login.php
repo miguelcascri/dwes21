@@ -43,14 +43,11 @@ $datos= mysqli_query($conn,$consulta);
 
 if(existeUsuario($email, $contraseña)){
     session_start(); // se crea sesion
-    ini_set("session.cookie_lifetime","10");
-    ini_set("session.gc_maxlifetime","10");
     $_SESSION["id"]="$email";
     header("Location: "."dashboard.php");
 }else{
-    header("Location: "."index.php");
-    echo '<script language="javascript">alert("juas");</script>';
-    flush();
+    header("Location: "."index.php?message=1");
+    // header("Location: "."index.php");
     
 }
 ?>

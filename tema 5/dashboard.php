@@ -1,22 +1,15 @@
 <?php
 ini_set("session.cookie_lifetime","10");
 ini_set("session.gc_maxlifetime","10");
-session_start(); // se crea sesion
-echo "Sesión iniciada. Usuario: ".$_SESSION["id"]." <br>";
-echo "<br> ¡AUTENTIFICACIÓN CORRECTA!";
+session_start(); // se crea la sesion
+echo "<br> ¡AUTENTIFICACIÓN CORRECTA!<br>";
+echo "<br> Sesión iniciada. Usuario: ".$_SESSION["id"].". <br>";
 
-// $tiempoInactivo = 10; 
-// // Si existe un valor para la clave timeout, la sesión ha sido establecida y se procede con el cálculo restante       
-// if(isset($_SESSION["timeout"])){ //Se calcula el tiempo que ha transcurrido desde que se conectó   
-//     $sessionTTL = time()-$_SESSION["timeout"];  
-//     //Si el tiempo de inactividad supera al establecido se cierra la sesión y se lanza un fichero PHP con un aviso        
-//     if($sessionTTL > $tiempoInactivo){            
-//     session_destroy();            
-//     header("Location: "."index.php");        
-//     }    
+// include "login.php";
+// if($_SESSION["id"]!="$email"){
+
+//     header("Location: "."index.php?message=3");
 // }
-// //Se almacena la hora exacta del inicio o creación de sesión    
-// $_SESSION["timeout"] = time();
 
 ?>
 
@@ -30,7 +23,11 @@ echo "<br> ¡AUTENTIFICACIÓN CORRECTA!";
 
 </head>
 <body>
-    <p>Si has terminado ya... puedes cerrar sesión aquí:</p>
-    <a href="logout.php" >Logout</a>
+    <p>Si has terminado ya... puedes cerrar sesión aquí:
+    <form action="logout.php">
+    <input type="submit" value="Cerrar Sesión">
+    </form>
+    </p>
+
 </body>
 </html>
