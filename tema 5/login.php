@@ -48,10 +48,8 @@ $datos= mysqli_query($conn,$consulta);
     }
 }
 
-// Si autentica o no realiza las siguientes redirecciones
+// Si autentica o no, realiza las siguientes redirecciones:
 if(existeUsuario($email, $contraseña)){
-
-     // se crea sesion
     header("Location: "."dashboard.php");
 }else{
     header("Location: "."index.php?msj=1");

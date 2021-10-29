@@ -24,11 +24,9 @@ function inactividad(){
 
 inactividad();
 
-echo "<br> ¡AUTENTICACIÓN CORRECTA!<br>";
-echo "<br> Sesión iniciada.
-<br> Email: ".$_SESSION["email"].".
-<br> Nombre: ".$_SESSION["nombre"].".";
+setcookie("color",$_POST["color"],time()+3600*21);
 
+echo "<br> ¡ESTA ES LA DASHBOARD-2!<br>";
 
 // Si no ha iniciado sesión (introducido sus datos en el log in, salta error y redirige)
 if(!isset($_SESSION["email"])){
@@ -36,7 +34,6 @@ if(!isset($_SESSION["email"])){
     header("Location: "."index.php?msj=3");
 
 }
-
 
 ?>
 
@@ -46,31 +43,21 @@ if(!isset($_SESSION["email"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard.php</title>
-<?php
-
-if(isset($_COOKIE['color'])){
-
-    // echo "style{color: ".$_COOKIE['color']";".};
-}    
-?>
+    <title>dashboard2.php</title>
 
 </head>
-<body style="color: $_COOKIE['color']">
-    <form method="post" action="dashboard2.php"><br>
-    <input type="radio" value="#ff0000" name="color"><span style="color: red;">Rojo</span>
-    <input type="radio" value="#0000ff" name="color"><span style="color: blue;">Azul</span>
-    <input type="radio" value="#00ff00" name="color"><span style="color: green;">Verde</span>
-    <input type="radio" value="#ffffff" name="color"><span style="color: black;">Negro</span>
-    <br><br>
-    <input type="submit" value="Cambiar">
-    </form>
-
-    <br>
+<body>
     <p>Si has terminado ya... puedes cerrar sesión aquí:
     <form action="logout.php">
     <input type="submit" value="Cerrar Sesión">
     </form>
     </p>
+
+    <p>Vuelve a la Dashboard:
+    <form action="dashboard.php">
+    <input type="submit" value="Volver">
+    </form>
+    </p>
+
 </body>
 </html>
