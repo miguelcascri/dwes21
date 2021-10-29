@@ -1,7 +1,7 @@
 <?php
 
 $email = $_POST['usuario'];
-$contraseña = $_POST['pw'];
+$contraseña = $_POST['pw']; 
 
 function existeUsuario ($email, $contraseña){
  
@@ -21,7 +21,7 @@ if(!$conn) {
 }
 
 //preparamos sentencia
-$consulta="SELECT email, password FROM usuarios";
+$consulta="SELECT email, password, nombre FROM usuarios WHERE email='"."$email"."' && password='"."$contraseña"."';";
 
 //seleccionamos base de datos
 mysqli_select_db($conn,"medac");
@@ -32,8 +32,15 @@ $datos= mysqli_query($conn,$consulta);
     foreach($datos as $clave => $value){
         $usuario = $value["email"];
         $password = $value["password"];
+        $name = $value["nombre"];
 
-        if (($email === $usuario) && ($contraseña === $password)){
+        // Si autentica datos, abre la sesión y crea dos variables sesion 
+        // para almacenar los datos de la base de datos deseados
+        if (($email == $usuario) && ($contraseña == $password)){
+
+            session_start();
+            $_SESSION["email"]=$usuario;
+            $_SESSION["nombre"]=$name;
             return true;
         }else{
             return false;
@@ -41,17 +48,17 @@ $datos= mysqli_query($conn,$consulta);
     }
 }
 
+// Si autentica o no realiza las siguientes redirecciones
 if(existeUsuario($email, $contraseña)){
-    session_start(); // se crea sesion
-    $_SESSION["id"]="$email";
+
+     // se crea sesion
     header("Location: "."dashboard.php");
 }else{
-    header("Location: "."index.php?message=1");
-    // header("Location: "."index.php");
-    
+    header("Location: "."index.php?msj=1");
+    // header("Location: "."index.php"); 
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

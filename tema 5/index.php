@@ -19,18 +19,22 @@
 
 <?php
 
-if(isset($_GET["message"])){
+if(isset($_GET["msj"])){
 
-    if($_GET["message"]=="1"){
+    if($_GET["msj"]=="1"){
         echo '<script language="javascript">alert("Error, autenticación incorrecta.");</script>';
     }
 
-    if($_GET["message"]=="2"){
+    if($_GET["msj"]=="2"){
         echo '<script language="javascript">alert("Sesión cerrada con éxito.");</script>';
     }
 
-    if($_GET["message"]=="3"){  
+    if($_GET["msj"]=="3"){  
         echo '<script language="javascript">alert("No se ha iniciado sesión.");</script>';
+    }
+
+    if($_GET["msj"]=="4"){  
+        echo '<script language="javascript">alert("La sesión ha caducado.");</script>';
     }
 }
 
