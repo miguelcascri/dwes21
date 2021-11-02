@@ -50,22 +50,12 @@ $datos= mysqli_query($conn,$consulta);
 
 // Si autentica o no, realiza las siguientes redirecciones:
 if(existeUsuario($email, $contraseña)){
+
     header("Location: "."dashboard.php");
 }else{
+
     header("Location: "."index.php?msj=1");
     // header("Location: "."index.php"); 
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login.php</title>
-</head>
-<body>
-
-</body>
-</html>

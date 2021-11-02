@@ -5,7 +5,7 @@ session_start();
 function inactividad(){
 
     //Se indica el tiempo de actividad (seg)  
-    $tiempoInactivo = 300; 
+    $tiempoInactivo = 60; 
     // Si existe un valor para la clave timeout, 
     //la sesión ha sido establecida y se procede con el cálculo restante       
     if(isset($_SESSION["timeout"])){ //Se calcula el tiempo que ha transcurrido desde que se conectó   
@@ -23,6 +23,7 @@ function inactividad(){
 }
 
 inactividad();
+error_reporting(0);
 
 echo "<br> ¡AUTENTICACIÓN CORRECTA!<br>";
 echo "<br> ¡BIENVENIDO A LA DASHBOARD-1! <br>
@@ -37,11 +38,6 @@ if(!isset($_SESSION["email"])){
 
 }
 
-if(isset($_COOKIE["color"])){
-
-    $color = $_COOKIE["color"];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -51,24 +47,22 @@ if(isset($_COOKIE["color"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>dashboard.php</title>
+    <style>
+        body{
+            margin-left: 14%;
+            margin: 8%;
+        }
+    </style>
 </head>
-<body style: <?php echo "$_COOKIE[color]" ?> ;>
-
-<!-- <form method="post" action="dashboard2.php"><br>
-        <input type="radio" value="rojo" name="color"><span style="color: red;">Rojo</span>
-        <input type="radio" value="azul" name="color"><span style="color: blue;">Azul</span>
-        <input type="radio" value="verde" name="color"><span style="color: green;">Verde</span>
-        <input type="radio" value="negro" name="color"><span style="color: black;">Negro</span>
-        <br><br>
-        <input type="submit" value="Cambiar">
-    </form> -->
+<body style="color:<?php echo "$_COOKIE[color]" ?>">
 
     <form method="post" action="dashboard2.php"><br>
         <input type="radio" value="#ff0000" name="color"><span style="color: red;">Rojo</span>
         <input type="radio" value="#0000ff" name="color"><span style="color: blue;">Azul</span>
-        <input type="radio" value="#00ff00" name="color"><span style="color: green;">Verde</span>
-        <input type="radio" value="#ffffff" name="color"><span style="color: black;">Negro</span>
+        <input type="radio" value="#00ff00" name="color"><span style="color: #00ff00;">Verde</span>
+        <input type="radio" value="#000000" name="color"><span style="color: black;">Negro</span>
         <br><br>
         <input type="submit" value="Cambiar">
     </form>

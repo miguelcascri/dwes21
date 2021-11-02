@@ -23,23 +23,12 @@ function inactividad(){
 }
 
 inactividad();
-
-// if ($_POST["color"]=="azul"){
-//     setcookie("color","#0000FF",time()+3600*21);
-// }elseif ($_POST["color"]=="rojo"){
-//     setcookie("color","#FF0000",time()+3600*21);
-// }elseif ($_POST["color"]=="verde"){
-//     setcookie("color","#00FF00",time()+3600*21);
-// }elseif ($_POST["color"]=="negro"){
-//     setcookie("color","#FFFFFF",time()+3600*21);
-// }
+error_reporting(0);
 
 setcookie("color",$_POST["color"],time()+3600*21);
 
 echo "<br> ¡ESTA ES LA DASHBOARD-2!<br>";
 
-// Si no ha iniciado sesión 
-// (introducido sus datos en el log in, salta error y redirige al index)
 if(!isset($_SESSION["email"])){
 
     header("Location: "."index.php?msj=3");
@@ -55,9 +44,16 @@ if(!isset($_SESSION["email"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>dashboard2.php</title>
+    <style>
+        body{
+            margin-left: 14%;
+            margin: 8%;
+        }
+    </style>
 </head>
-<body style: <?php echo "$_COOKIE[color]" ?> ;>
+<body style="color: <?php echo "$_COOKIE[color]" ?>">
 
     <p>Vuelve a la Dashboard-1:
     <form action="dashboard.php">
