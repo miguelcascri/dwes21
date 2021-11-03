@@ -14,7 +14,11 @@ function inactividad(){
         // se lanza un fichero PHP con un aviso        
         if($sessionTTL > $tiempoInactivo){            
             session_destroy();            
-            header("Location: index.php?msj=4");        
+            header("Location: index.php?msj=4");
+
+            if(isset($_COOKIE["color"])){
+                setcookie("color","black",time()-6000000000000000000);
+            }
         }    
     }
     //Se almacena la hora exacta del inicio o creación de sesión    
