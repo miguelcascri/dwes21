@@ -56,7 +56,7 @@ if(!isset($_SESSION["email"])){
         }
     </style>
 </head>
-<body style="color: <?php echo "$_COOKIE[color]" ?>">
+<body style="color: <?php echo $_COOKIE[color] ?>">
 
     <p>Vuelve a la Dashboard-1:
     <form action="dashboard.php">

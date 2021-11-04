@@ -44,7 +44,11 @@ if(isset($_GET["msj"])){
         <form method="post" action="login.php">
         <p>Email</p>      <input type="email" name="usuario">
         <p>Contraseña</p>  <input type="password" name="pw"><br><br>
-        <input type="submit">
+        <input type="submit"><br>
+        </form>
+        <form action="oauth/login.php"><br>
+        <p>Si quieres iniciar sesión con tu cuenta de Google...:</p>
+        <input type="submit" value="Google">
         </form>
 </body>
 </html>
