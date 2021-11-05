@@ -38,6 +38,11 @@ if(!isset($_SESSION["email"])){
 
 }
 
+// He incluido esta redirección para que se cambie el color "automaticamente", 
+// pero se puede comentar en caso de ser necesario.
+// Un saludo.
+header("Location: "."dashboard.php")
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +61,7 @@ if(!isset($_SESSION["email"])){
         }
     </style>
 </head>
-<body style="color: <?php echo $_COOKIE[color] ?>">
+<body style="color: <?php echo $_COOKIE["color"] ?>">
 
     <p>Vuelve a la Dashboard-1:
     <form action="dashboard.php">

@@ -60,7 +60,7 @@ if(!isset($_SESSION["email"])){
         }
     </style>
 </head>
-<body style="color:<?php echo $_COOKIE[color] ?>">
+<body style="color:<?php echo $_COOKIE["color"] ?>">
 
     <form method="post" action="dashboard2.php"><br>
         <input type="radio" value="#ff0000" name="color"><span style="color: red;">Rojo</span>
