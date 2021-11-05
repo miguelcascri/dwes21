@@ -24,8 +24,8 @@ if (isset($_GET['code'])) {
         if(!empty($data['given_name']))
             $_SESSION['nombre'] = $data['given_name'];
 
-        // if(!empty($data['family_name']))
-        //     $_SESSION['user_last_name'] = $data['family_name'];
+        if(!empty($data['family_name']))
+            $_SESSION['user_last_name'] = $data['family_name'];
 
         if(!empty($data['email']))
             $_SESSION['email'] = $data['email'];
