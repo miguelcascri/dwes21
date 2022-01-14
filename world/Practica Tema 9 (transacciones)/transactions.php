@@ -15,22 +15,21 @@
   {
     $conex = new mysqli("localhost", "root", "", "world");
 
+    mysqli_report(MYSQLI_REPORT_ALL);
+
     $conex->autocommit(false);
-    $conex->begin_transaction();
 
     try {
       $conex->begin_transaction();
+
       $conex->query("INSERT INTO `country`(`Code`, `Name`) VALUES ('MED', 'MEDAC');");
       $conex->query("INSERT INTO `city`(`Name`, `CountryCode`) VALUES ('ARENA','MED'), ('MÁLAGA','MED');");
       $conex->query("INSERT INTO `countrylanguage`(`CountryCode`, `Language`) VALUES ('MED','PHP'), ('MED','JAVA');");
 
-      if ($conex->error) {
-        throw new mysqli_sql_exception($conex->error);
-      } else {
-        $conex->commit();
-        echo "Succesful transaction.";
-      }
-    } catch (mysqli_sql_exception $e) {
+      $conex->commit();
+      echo "Succesful transaction.";
+
+    } catch (Exception $e) {
       $conex->rollback();
       echo "Something fails: ", $e->getMessage(), "\n";
     }
@@ -39,23 +38,22 @@
   function transaction2()
   {
     $conex = new mysqli("localhost", "root", "", "world");
+    
+    mysqli_report(MYSQLI_REPORT_ALL);
 
     $conex->autocommit(false);
-    $conex->begin_transaction();
-
+    
     try {
+      $conex->begin_transaction();
 
       $conex->query("DELETE FROM `city` WHERE Name = 'MÁLAGA';");
       $conex->query("INSERT INTO `city`(`Name`, `CountryCode`) VALUES ('CÓRDOBA27','MED'), ('CÓRDOBA69','MED');");
       $conex->query("UPDATE `country` SET `Code`='IES' WHERE Code = 'MED';");
 
-      if ($conex->error) {
-        throw new mysqli_sql_exception($conex->error);
-      } else {
-        $conex->commit();
-        echo "Succesful transaction.";
-      }
-    } catch (mysqli_sql_exception $e) {
+      $conex->commit();
+      echo "Succesful transaction.";
+
+    } catch (Exception $e) {
       $conex->rollback();
       echo "Something fails: ", $e->getMessage(), "\n";
     }
@@ -64,22 +62,22 @@
   function transaction3()
   {
     $conex = new mysqli("localhost", "root", "", "world");
-
+    
+    mysqli_report(MYSQLI_REPORT_ALL);
+    
     $conex->autocommit(false);
-    $conex->begin_transaction();
 
     try {
+      $conex->begin_transaction();
+
       $conex->query("INSERT INTO `countrylanguage`(`CountryCode`, `Language`) VALUES 
         ('IES','SQL'), ('IES','JS'), ('IES','Python'), ('IES','C++'), ('IES','Ruby');");
       $conex->query("DELETE FROM `country` WHERE Code = 'IES';");
 
-      if ($conex->error) {
-        throw new mysqli_sql_exception($conex->error);
-      } else {
-        $conex->commit();
-        echo "Succesful transaction.";
-      }
-    } catch (mysqli_sql_exception $e) {
+      $conex->commit();
+      echo "Succesful transaction.";
+
+    } catch (Exception $e) {
       $conex->rollback();
       echo "Something fails: ", $e->getMessage(), "\n";
     }
