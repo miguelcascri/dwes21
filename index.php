@@ -108,6 +108,8 @@ body {
         <p>Ejercicio World PHP-Js</p>
         <a href="world/Practica Tema 9 (transacciones)/index.php">EJERCICIO 2</a>
         <p>Ejercicio World Transacciones</p>
+        <a href="crud_ajax/index.php">EJERCICIO 3</a>
+        <p>Ejercicio World Examen</p>
     </div>
 
     <script src="app.js"></script>
